@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile>
+  <diagram name="High Availability Architecture">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Global Load Balancer -->
+        <mxCell id="GlobalLB" value="Global Load Balancer" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#d6f5d6;strokeColor=#4CAF50;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Route 53 -->
+        <mxCell id="Route53" value="Route 53 (DNS)" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#FFEB3B;strokeColor=#FBC02D;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="400" y="100" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Region A Group -->
+        <mxCell id="RegionA" value="Region A" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#2196F3;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="100" y="200" width="400" height="400" as="geometry" />
+        </mxCell>
+
+        <!-- AZ1 in Region A -->
+        <mxCell id="RegionA_AZ1" value="AZ1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;fontSize=12;" vertex="1" parent="RegionA">
+          <mxGeometry x="20" y="40" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RegionA_Master" value="Master Instance" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#D1C4E9;strokeColor=#673AB7;fontSize=12;" vertex="1" parent="RegionA_AZ1">
+          <mxGeometry x="40" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- AZ2 in Region A -->
+        <mxCell id="RegionA_AZ2" value="AZ2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;fontSize=12;" vertex="1" parent="RegionA">
+          <mxGeometry x="20" y="160" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RegionA_AZ2_Instance" value="Instance (Heartbeat)" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#FF5722;fontSize=12;" vertex="1" parent="RegionA_AZ2">
+          <mxGeometry x="40" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- AZ3 in Region A -->
+        <mxCell id="RegionA_AZ3" value="AZ3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;fontSize=12;" vertex="1" parent="RegionA">
+          <mxGeometry x="20" y="280" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RegionA_AZ3_Instance" value="Instance (Heartbeat)" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#FF5722;fontSize=12;" vertex="1" parent="RegionA_AZ3">
+          <mxGeometry x="40" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Region B Group -->
+        <mxCell id="RegionB" value="Region B" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#E91E63;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="600" y="200" width="400" height="400" as="geometry" />
+        </mxCell>
+
+        <!-- AZ1 in Region B -->
+        <mxCell id="RegionB_AZ1" value="AZ1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;fontSize=12;" vertex="1" parent="RegionB">
+          <mxGeometry x="20" y="40" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RegionB_Master" value="Master Instance" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#D1C4E9;strokeColor=#673AB7;fontSize=12;" vertex="1" parent="RegionB_AZ1">
+          <mxGeometry x="40" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- AZ2 in Region B -->
+        <mxCell id="RegionB_AZ2" value="AZ2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;fontSize=12;" vertex="1" parent="RegionB">
+          <mxGeometry x="20" y="160" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RegionB_AZ2_Instance" value="Instance (Heartbeat)" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#FF5722;fontSize=12;" vertex="1" parent="RegionB_AZ2">
+          <mxGeometry x="40" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- AZ3 in Region B -->
+        <mxCell id="RegionB_AZ3" value="AZ3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;fontSize=12;" vertex="1" parent="RegionB">
+          <mxGeometry x="20" y="280" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RegionB_AZ3_Instance" value="Instance (Heartbeat)" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#FF5722;fontSize=12;" vertex="1" parent="RegionB_AZ3">
+          <mxGeometry x="40" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
